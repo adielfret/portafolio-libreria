@@ -1,0 +1,283 @@
+
+
+/* 1. Configuración general */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fbf8f3;
+    color: #28251f;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* 2. Encabezado y menú */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #fbf8f3;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #a84e3c;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    font-size: 14px;
+    color: #5f5a52;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #a84e3c;
+}
+
+/* 3. Portada principal */
+.portada {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    padding: 65px 8% 85px;
+}
+
+.etiqueta {
+    color: #a84e3c;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.portada h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.12;
+    max-width: 520px;
+    margin-bottom: 22px;
+}
+
+.descripcion {
+    color: #6c665d;
+    max-width: 410px;
+    margin-bottom: 30px;
+}
+
+.boton {
+    display: inline-block;
+    background: #a84e3c;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.boton:hover {
+    background: #813929;
+}
+
+.portada-imagen img {
+    height: 430px;
+    border-radius: 8px;
+}
+
+/* 4. Catálogo de libros */
+.catalogo {
+    background: #f1e9df;
+    padding: 80px 8%;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-seccion h2,
+.nosotros h2,
+.contacto h2 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.titulo-seccion > p:last-child {
+    color: #6c665d;
+}
+
+.libros {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.libro {
+    background: #fbf8f3;
+    border-radius: 7px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.libro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px #30271b12;
+}
+
+.libro img {
+    height: 260px;
+}
+
+.libro-info {
+    padding: 22px;
+}
+
+.categoria {
+    color: #a84e3c;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.libro h3 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.precio {
+    font-weight: bold;
+}
+
+.aviso {
+    text-align: center;
+    font-size: 12px;
+    color: #6c665d;
+    margin-top: 28px;
+}
+
+/* 5. Sección sobre nosotros */
+.nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 85px 8%;
+}
+
+.nosotros > p {
+    color: #6c665d;
+}
+
+/* 6. Contacto */
+.contacto {
+    text-align: center;
+    background: #302b27;
+    color: #fbf8f3;
+    padding: 75px 8%;
+}
+
+.contacto .etiqueta {
+    color: #e6aa91;
+}
+
+.contacto > p:not(.etiqueta) {
+    color: #d2c8bd;
+    max-width: 550px;
+    margin: 0 auto 25px;
+}
+
+.boton-claro {
+    background: #fbf8f3;
+    color: #302b27;
+}
+
+.boton-claro:hover {
+    background: #e6ddd2;
+}
+
+/* 7. Pie de página */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 8%;
+}
+
+footer p {
+    color: #6c665d;
+    font-size: 12px;
+}
+
+/* 8. Adaptación para celulares */
+@media (max-width: 760px) {
+    .encabezado {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .portada {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+        gap: 30px;
+    }
+
+    .portada-imagen img {
+        height: 300px;
+    }
+
+    .libros {
+        grid-template-columns: 1fr;
+    }
+
+    .libro img {
+        height: 300px;
+    }
+
+    .nosotros {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
